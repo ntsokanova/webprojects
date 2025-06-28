@@ -1,0 +1,40 @@
+body {
+    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    z-index: 20;
+    background-color: aqua;
+    height: 80px;
+    position: sticky;
+    top: 0px;
+}
+
+footer {
+    background-color: brown;
+}
+
+nav {
+    box-sizing: border-box;
+    padding: 20px 15px 15px 15px;
+    /*background-color: bisque;*/
+    flex: none;
+    height: calc(100vh - 80px);
+    position: sticky;
+    top: 80px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+article{
+    box-sizing: border-box;
+    padding: 30px 60px 20px 60px;
+    flex: 0 1 800px;
+}

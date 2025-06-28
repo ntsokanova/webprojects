@@ -1,16 +1,20 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article_shortcut"/>
-        <script src="js/util.js"> </script>
-    </head>
-    <body>
-        <div class="header-area">
-            Hello!
-        </div>
-        <div class="mainArea">
-            <div class="leftCol">
-                <ul class="glossary">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/mainLayout.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article_shortcut,picture_as_pdf"/>
+    <script src="js/util.js"> </script>
+    <link rel="stylesheet" href="css/sideMenu.css">
+    <link rel="stylesheet" href="css/exrecise.css">
+</head>
+<body>
+    <header>Header</header>
+    <main>
+        <nav>
+            <ul class="glossary">
                     <li onclick="jumpTo('#Exercise1')">
                         <span class="material-symbols-outlined">article_shortcut</span>
                         Exercise 1 (22.06.2025)
@@ -40,22 +44,34 @@
                         Exercise 7 (22.06.2025)
                     </li>
                 </ul>
-            </div>
-            <div class="mainCol">
-                <article id="Exercise1" class = "border">
+        </nav>
+        <article>
+            <section id="Exercise1" class = "border">
                     <h2> Exrecise 1 (21.06.2025) </h2>
 
                     <p>
-                        We reviewed the previous exercise.
+                        We reviewed the previous exercise and went over common mistakes.
+                        We explored synchronization in Java, learning how to use locks effectively.
+                        We also looked at wait and notify, working through a practical example of the 
+                        producer-consumer problem to understand why they are needed. Additionally,
+                        we briefly discussed Exercise 3. To finish, we solved some past exam questions.
                     </p>
-                    <p>
-                        <a href="https://drive.google.com/file/d/11ZeA1Ft0GOc8Acd06P6-41Fu1cOQJ5wX/view?usp=drive_link" 
-                        target="_blank"> presentation </a>
-                        <a> link2 </a>
-                        <a> link3 </a>
-                    </p>
-                </article>
-                <article id="Exercise2" class = "border">
+                    <div class="linksBar">
+                        <a href="https://drive.google.com/file/d/11ZeA1Ft0GOc8Acd06P6-41Fu1cOQJ5wX/view?usp=drive_link" target="_blank"> 
+                                <span class="material-symbols-outlined">picture_as_pdf</span> 
+                                presentation 
+                        </a>
+                        <a href="https://drive.google.com/file/d/11ZeA1Ft0GOc8Acd06P6-41Fu1cOQJ5wX/view?usp=drive_link" target="_blank"> 
+                                <span class="material-symbols-outlined">picture_as_pdf</span> 
+                                theory 
+                        </a>
+                        <a href="https://drive.google.com/file/d/11ZeA1Ft0GOc8Acd06P6-41Fu1cOQJ5wX/view?usp=drive_link" target="_blank"> 
+                                <span class="material-symbols-outlined">picture_as_pdf</span> 
+                                exersice 
+                        </a>
+                    </div>
+                </section>
+                <section id="Exercise2" class = "border">
                     <h2> Exrecise 2 (21.06.2025) </h2>
 
                     <p>
@@ -67,8 +83,8 @@
                         <a> link2 </a>
                         <a> link3 </a>
                     </p>
-                </article>
-                <article id="Exercise3" class = "border">
+                </section>
+                <section id="Exercise3" class = "border">
                     <h2> Exrecise 3 (21.06.2025) </h2>
 
                     <p>
@@ -80,8 +96,8 @@
                         <a> link2 </a>
                         <a> link3 </a>
                     </p>
-                </article>
-                <article id="Exercise4" class = "border">
+                </section>
+                <section id="Exercise4" class = "border">
                     <h2> Exrecise 4 (21.06.2025) </h2>
 
                     <p>
@@ -93,8 +109,8 @@
                         <a> link2 </a>
                         <a> link3 </a>
                     </p>
-                </article>
-                <article id="Exercise5" class = "border">
+                </section>
+                <section id="Exercise5" class = "border">
                     <h2> Exrecise 5 (21.06.2025) </h2>
 
                     <p>
@@ -106,8 +122,8 @@
                         <a> link2 </a>
                         <a> link3 </a>
                     </p>
-                </article>
-                <article id="Exercise6" class = "border">
+                </section>
+                <section id="Exercise6" class = "border">
                     <h2> Exrecise 6 (21.06.2025) </h2>
 
                     <p>
@@ -119,8 +135,8 @@
                         <a> link2 </a>
                         <a> link3 </a>
                     </p>
-                </article>
-                <article id="Exercise7" class = "border">
+                </section>
+                <section id="Exercise7" class = "border">
                     <h2> Exrecise 7 (21.06.2025) </h2>
 
                     <p>
@@ -132,8 +148,9 @@
                         <a> link2 </a>
                         <a> link3 </a>
                     </p>
-                </article>
-            </div>
-        </div>    
-    </body>
-</html>   
+                </section>
+        </article>
+    </main>
+    <footer>footer</footer>
+</body>
+</html>

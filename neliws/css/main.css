@@ -1,6 +1,13 @@
 .mainArea{
+    border: 1px solid red;
     display: flex;
-    height: 100%;
+    flex: 1;
+    overflow: auto;
+}
+
+.header-area{
+    border: 1px solid purple;
+    height: 100px;
 }
 
 .border {
@@ -20,8 +27,8 @@
     box-sizing: border-box;
     height: 100%;
     border: 1px solid orange;
-    overflow: auto;
     flex: 1;
+    overflow: auto;
     padding: 15px 25px 10px 25px;
 }
 
@@ -44,8 +51,12 @@
 
 body {
     font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     margin: 0px;
     padding: 0px;
+    
 }
 
 h2{

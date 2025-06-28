@@ -1,0 +1,25 @@
+.glossary{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.glossary li{
+    cursor: pointer;
+    padding: 2px 4px 2px 4px;
+}
+
+.glossary li:hover{
+    background-color: rgb(233, 233, 233);
+    border-radius: 4px;
+    color: blue;
+}
+
+.glossary .material-symbols-outlined {
+  vertical-align: text-top;  
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' -25,
+  'opsz' 20
+}
