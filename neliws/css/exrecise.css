@@ -40,3 +40,17 @@ article .material-symbols-outlined {
     'GRAD' 0,
     'opsz' 40
 }
+
+.title-line {
+    display: flex;
+    align-items: center;
+}
+
+.fill-space {
+    flex: 1;
+}
+
+.chap-title-1 {
+    font-size: 24px;
+    font-weight: 700;
+}
