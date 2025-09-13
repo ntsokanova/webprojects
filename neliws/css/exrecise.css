@@ -10,6 +10,11 @@
     box-shadow: -4px 4px 10px rgb(100 100 100 / 60%);
 }
 
+.navigateTo{
+    text-shadow: 5px 5px 5px 5px red;
+    border:1px red;
+}
+
 /* linksBar styling */
 .linksBar{
     display: flex;

@@ -1,0 +1,8 @@
+.focusedTest{
+    border-color: blue;
+    box-shadow: -4px 4px 10px rgb(100 100 100 / 60%);
+}
+
+.formatCode{
+    text-align: right;
+}
