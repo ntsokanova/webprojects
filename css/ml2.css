@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: grey;
+    height: 80px;
+    color: white;
+    position: sticky;
+    top: 0px;
+    z-index: 20;
+}
+
+
+main {
+    background-color: lightgray;
+    display: flex;
+    /* justify-content: center; */
+}
+
+
+nav {
+    background-color: skyblue;
+    flex: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    box-sizing: border-box;
+    border: 4px solid red;
+}
+
+article {
+    background-color: peachpuff;
+    max-width: 600px;
+}
+
+
+footer {
+    background-color: grey;
+    color: white;
+    height: 80px;
+    position: relative;
+}

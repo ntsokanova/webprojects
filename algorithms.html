@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    </head>
+    <body>
+        <pre>
+<code class="language-java">
+    public void toCSV() throws Exception
+    {
+        JAXBContext ctx = JAXBContext.newInstance(CardsAuthorizationInfo.class);
+        CardsAuthorizationInfo root = (CardsAuthorizationInfo)ctx.createUnmarshaller().unmarshal(Files.newInputStream(xmlFile));
+        List<CardAuthorization> authorizations = root.getCardAuthorizationInfo().getAuthorizations();
+
+        authorizations.forEach(this::authorizationToString);
+        System.out.println(csv);
+    }
+
+
+    private void authorizationToString(CardAuthorization a)
+    {
+        csv.append(a.getChangeAmount()).append(", ")
+           .append(a.getMerchantName()).append(", ")
+           .append(a.getTransactionDate().format(dateFormat)).append(", ")
+           .append(a.getCategory()).append(", ")
+           .append(a.getOperationDescription()).append("\n");
+    }
+</code></pre>
+    </body>
+    <script>hljs.highlightAll();</script>
+</html> 

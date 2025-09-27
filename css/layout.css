@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Needed in order to be known what height is available for children. */
+    display: flex;
+    flex-direction: column;
+}
+
+.header-area {
+    box-sizing: border-box;
+    flex: 0 0 100px;  /* 100px base height, no expand, no shrink. */
+    overflow: hidden;
+    background-color: aqua;
+}
+
+.content-area {
+    box-sizing: border-box;
+    flex: 1; /* Take all available space below "header-area". */
+    overflow: hidden; /* Hide everythink which overflows this box. */
+    background-color: yellowgreen;
+
+    display: flex; /* Child boxes are layd out horizontally using flex. */
+    justify-content: center; /* Child boxes are horizontally centered. */
+}
+
+nav { /* Child box holding navigatin. */
+    background-color: yellow;
+}
+
+main {
+    background-color: skyblue;
+    flex: 0 1 640px;
+    overflow: auto;
+    padding: 20px;
+}
+
+article {
+    max-width: 1000px;
+    min-width: 600px;
+    background-color: white;
+}
