@@ -1,8 +1,16 @@
 .focusedTest{
+<<<<<<< HEAD
     border-color: red;
     box-shadow: -4px 4px 10px rgb(100 100 100 / 60%);
+=======
+    text-decoration: underline;
+>>>>>>> branch 'master' of git@github.com:ntsokanova/webprojects.git
 }
 
 .formatCode{
-    text-align: right;
+    max-height: 200px;
+    padding: 8px;
+    border: 1px solid darkgray;
+    display: block;
+    overflow: auto;
 }

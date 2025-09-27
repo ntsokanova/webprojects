@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/sideMenu.css">
         <link rel="stylesheet" href="css/exrecise.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+       <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script> -->
     </head>
     <body>
         <header>
@@ -109,10 +109,26 @@
                         <button onclick="copyCode('#code_0')">
                             Copy
                         </button>
-                        <code id="code_0" class="language-java" class="formatCode">
-                            public static int calulate(int a, int b){
-                                return a+b;
-                            }
+                        <code id="code_0" class="formatCode">
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">toCSV</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception
+{
+    <span class="hljs-type">JAXBContext</span> <span class="hljs-variable">ctx</span> <span class="hljs-operator">=</span> JAXBContext.newInstance(CardsAuthorizationInfo.class);
+    <span class="hljs-type">CardsAuthorizationInfo</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> (CardsAuthorizationInfo)ctx.createUnmarshaller().unmarshal(Files.newInputStream(xmlFile));
+    <span class="hljs-type">List</span> <span class="hljs-variable">authorizations</span> <span class="hljs-operator">=</span> root.getCardAuthorizationInfo().getAuthorizations();
+                            
+    authorizations.forEach(<span class="hljs-built_in">this</span>::authorizationToString);
+    System.out.println(csv);
+}
+                            
+                            
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">authorizationToString</span><span class="hljs-params">(CardAuthorization a)</span>
+{
+    csv.append(a.getChangeAmount()).append(<span class="hljs-string">", "</span>)
+        .append(a.getMerchantName()).append(<span class="hljs-string">", "</span>)
+        .append(a.getTransactionDate().format(dateFormat)).append(<span class="hljs-string">", "</span>)
+        .append(a.getCategory()).append(<span class="hljs-string">", "</span>)
+        .append(a.getOperationDescription()).append(<span class="hljs-string">"\n"</span>);
+}
                         </code>
                     </pre>
                 </section>
