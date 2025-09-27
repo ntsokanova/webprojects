@@ -21,7 +21,18 @@ header {
 }
 
 footer {
-    background-color: brown;
+    background-color: rgb(40, 180, 99);
+}
+
+.contactInfo {
+    padding-left: 16px;
+    font-size: 24px; 
+    color: rgb(212, 214, 217);
+}
+.email{
+    padding-left: 16px;
+    font-size: 18px; 
+    color: rgb(212, 214, 217);
 }
 
 .side-nav{
