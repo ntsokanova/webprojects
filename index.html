@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/mainLayout.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article_shortcut,calendar_month,picture_as_pdf"/>
     <script src="js/util.js"> </script>
     <link rel="stylesheet" href="css/sideMenu.css">
@@ -12,49 +13,65 @@
 </head>
 <body>
     <header>
-        <img src="img/Logo_old.jpg" style="max-height: 54px; width: auto;">
+        <img src="img/Logo.jpg" style="max-height: 54px; width: auto;">
         <nav class="top-nav">
             <ul>
                 <li class="selected-link"> <a href=""> Home </a> </li>
-                <li> <a href="/exerciseHistory2.html"> Exercises Log </a> </li>
-                <li> <a href=""> Algorithms </a> </li>
+                <li> <a href="exerciseHistory2.html"> Exercises Log </a> </li>
+                <li> <a href="algorithms2.html"> Algorithms </a> </li>
             </ul>
         </nav> 
     </header>
     <main>
         <article>
-            <section id="Exercise1" class = "border">
+            <section>
+                <div class = "wellcome"> Wellcome to my Website!</div>
+                <div class ="intro"> Hi, everyone! My name is Neli and this is my website. 
+                    I am a sudent at ETH Zürich and I am currently in the third
+                    semester of my Bachelor's degree in Computer Science. This semester
+                    I am a TA for the course Aldorithms and Data Scructures and the main
+                    purpose of this webpage is to share useful materials materials with the
+                    students taking this course.
+                </div>
+            </section>
+            <section id="Exercise Log" class = "border">
                     <div class="title-line">
-                        <span class="chap-title-1">Exercise 1</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 22.09.2025     
+                        <span class="chap-title-1">Exercise Log</span>
+                        <div class="fill-space"></div>     
                     </div>
 
                     <p>
-                        We reviewed the previous exercise and went over common mistakes.
-                        We explored synchronization in Java, learning how to use locks effectively.
-                        We also looked at wait and notify, working through a practical example of the 
-                        producer-consumer problem to understand why they are needed. Additionally,
-                        we briefly discussed Exercise 3. To finish, we solved some past exam questions.
+                        In the Exercise Log page you can find short summary of what we did durig the
+                        exercise class as well as the materials we used. 
                     </p>
                     <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/EEpPXJwJrjEHm73" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Presentation 
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/WpTxCZedoj4EiM9" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes 
-                        </a>
+                        <a href="exerciseHistory2.html">To Exercise Log -></a>
                     </div>
-                </section>
+                    
+            </section>
+            <section id="Algorithms" class = "border">
+                    <div class="title-line">
+                        <span class="chap-title-1">Algorithms</span>
+                        <div class="fill-space"></div>     
+                    </div>
+
+                    <p>
+                        In the Algorithms page you can find a collection of algorithms 
+                        with links to the description of the algorithm, the implementation of the algorithm
+                        in Java and the analysis of the runtime of the algorithm.
+                    </p>
+                    <div class="linksBar">
+                        <a href="algorithms2.html">To Algorithms -></a>
+                    </div>
+                    
+            </section>
         </article>
     </main>
     <footer>
         <p>
             <div class = "contactInfo"> Contact infromation</div>
 
-            <div class = "email"> Email: ntsokanova@ethz.ch </div>    
+            <div class = "email"> Email: <a href="mailto:ntsokanova@ethz.ch">ntsokanova@ethz.ch</a>  </div>    
 
 
         </p>
