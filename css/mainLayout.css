@@ -30,14 +30,25 @@ footer {
 }
 
 .contactInfo {
-    padding-left: 16px;
-    font-size: 24px; 
+    color: rgb(254, 255, 255);
+    text-align: right;
+    padding: 10px 20px 5px 0px;
+}
+
+.contact-title {
+    font-size: 18px;
+}
+
+.contactInfo :link{
+    text-decoration: none;
+}
+
+.contactInfo a {
     color: rgb(254, 255, 255);
 }
-.email{
-    padding-left: 16px;
-    font-size: 18px; 
-    color: rgb(254, 255, 255);
+
+.contactInfo a:hover {
+    color: rgb(64, 64, 255);
 }
 
 .side-nav{
