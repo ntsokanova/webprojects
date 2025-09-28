@@ -29,6 +29,10 @@ footer {
     background-image: linear-gradient(to top, rgb(24, 203, 90)90%, white);
 }
 
+.logo {
+    padding-left: 20px;
+}
+
 .contactInfo {
     color: rgb(254, 255, 255);
     text-align: right;
@@ -76,6 +80,10 @@ article{
 /* --------------------------------------------
         Top navigation bar with links
    -------------------------------------------- */ 
+
+.top-nav {
+    padding-left: 60px;
+}
    
 .top-nav ul {
     list-style: none;
