@@ -58,9 +58,9 @@ footer {
 .side-nav{
     box-sizing: border-box;
     padding: 20px 15px 15px 15px;
-    /*background-color: bisque;*/
+    /* background-color: bisque; */
     flex: none;
-    /* height: calc(100vh - 160px); */
+    height: calc(100vh - 150px);
     position: sticky;
     top: 80px;
 }
