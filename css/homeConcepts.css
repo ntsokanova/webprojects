@@ -1,0 +1,155 @@
+/* ============================================================
+   Shared reset — kept minimal so each concept can diverge freely
+   ============================================================ */
+* { box-sizing: border-box; }
+.home-page { margin: 0; min-height: 100vh; }
+.home-page a { color: inherit; }
+.home-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px clamp(20px, 5vw, 56px); }
+.home-brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.home-brand svg { width: 46px; height: 46px; flex: none; }
+.home-nav { display: flex; gap: 6px; }
+.home-nav a { text-decoration: none; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: .93rem; }
+.home-main { padding: 0 clamp(20px, 5vw, 56px) 60px; }
+.home-hero { display: grid; gap: 26px; padding: clamp(28px, 6vw, 64px) 0 clamp(30px, 5vw, 54px); }
+.home-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.home-card { text-decoration: none; padding: 26px; display: block; }
+.home-card h2 { margin: 14px 0 8px; }
+.home-card p { margin: 0; line-height: 1.55; }
+.home-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 24px clamp(20px, 5vw, 56px) 34px; }
+.home-footer a { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 720px) {
+    .home-cards { grid-template-columns: 1fr; }
+    .home-header { flex-wrap: wrap; }
+}
+
+/* ============================================================
+   Concept 1 — Chalkboard Constellation (home1.html)
+   Dark slate board, chalk handwriting, star-linked ideas
+   ============================================================ */
+.concept-chalk {
+    font-family: 'Patrick Hand', 'Segoe Print', cursive;
+    color: #f2ede0;
+    background: #1c2b23 radial-gradient(1.5px 1.5px at 20% 30%, rgb(255 255 255 / 45%) 0, transparent 60%),
+                radial-gradient(1.5px 1.5px at 70% 15%, rgb(255 255 255 / 35%) 0, transparent 60%),
+                radial-gradient(2px 2px at 85% 55%, rgb(255 255 255 / 40%) 0, transparent 60%),
+                radial-gradient(1.5px 1.5px at 40% 78%, rgb(255 255 255 / 30%) 0, transparent 60%),
+                radial-gradient(1.5px 1.5px at 10% 65%, rgb(255 255 255 / 30%) 0, transparent 60%),
+                radial-gradient(1.5px 1.5px at 92% 85%, rgb(255 255 255 / 35%) 0, transparent 60%);
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+}
+.concept-chalk::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(rgb(255 255 255 / 3%) 0 1px, transparent 1px 42px);
+    pointer-events: none;
+}
+.concept-chalk .home-brand span { font-size: 1.2rem; letter-spacing: .02em; }
+.concept-chalk .home-brand small { display: block; font-family: 'Segoe UI', sans-serif; font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: #9fd8c6; font-weight: 600; }
+.concept-chalk .home-nav a { color: #d9e8e0; }
+.concept-chalk .home-nav a:hover, .concept-chalk .home-nav a[aria-current="page"] { background: rgb(255 255 255 / 10%); color: #ffcf5c; }
+.concept-chalk .chalk-eyebrow { color: #7fd6c0; text-transform: uppercase; letter-spacing: .16em; font-family: 'Segoe UI', sans-serif; font-size: .7rem; font-weight: 700; margin: 0 0 10px; }
+.concept-chalk .chalk-title { margin: 0; font-size: clamp(2.4rem, 5.4vw, 4rem); line-height: 1.15; text-shadow: 0 0 18px rgb(255 255 255 / 12%); max-width: 760px; }
+.concept-chalk .chalk-lede { max-width: 620px; font-size: 1.15rem; line-height: 1.7; color: #cfe3da; margin-top: 14px; }
+.concept-chalk .constellation { position: relative; height: 60px; margin-top: 6px; }
+.concept-chalk .constellation svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.concept-chalk .home-card { background: rgb(255 255 255 / 4%); border: 2px dashed rgb(255 255 255 / 25%); border-radius: 18px; transform: rotate(-.6deg); transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.concept-chalk .home-cards .home-card:nth-child(2) { transform: rotate(.6deg); }
+.concept-chalk .home-card:hover { transform: rotate(0deg) translateY(-4px); border-color: #ffcf5c; background: rgb(255 255 255 / 7%); }
+.concept-chalk .card-glyph { font-size: 1.9rem; color: #ffcf5c; }
+.concept-chalk .home-card p { color: #cfe3da; }
+.concept-chalk .home-card .go { display: inline-block; margin-top: 14px; color: #7fd6c0; font-weight: 700; }
+.concept-chalk .home-footer { border-top: 1px dashed rgb(255 255 255 / 20%); color: #9fb5ac; }
+.concept-chalk .home-footer a { color: #ffcf5c; }
+
+/* ============================================================
+   Concept 2 — Notebook Grid (home2.html)
+   Cream graph paper, ink accents, sticky-note course cards
+   ============================================================ */
+.concept-notebook {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #223047;
+    background-color: #fbf6ea;
+    background-image:
+        linear-gradient(rgb(47 74 124 / 8%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(47 74 124 / 8%) 1px, transparent 1px);
+    background-size: 26px 26px;
+}
+.concept-notebook .home-header { background: #fbf6ea; border-bottom: 2px solid #2f4a7c; position: sticky; top: 0; z-index: 5; }
+.concept-notebook .home-brand span { font-family: 'Caveat', 'Segoe UI', cursive; font-size: 1.55rem; font-weight: 700; color: #2f4a7c; line-height: 1; }
+.concept-notebook .home-brand small { display: block; font-family: 'Segoe UI', sans-serif; font-size: .64rem; letter-spacing: .06em; text-transform: uppercase; color: #e0602f; font-weight: 700; margin-top: 2px; }
+.concept-notebook .home-nav a { color: #2f4a7c; }
+.concept-notebook .home-nav a:hover, .concept-notebook .home-nav a[aria-current="page"] { background: #2f4a7c; color: #fbf6ea; }
+.concept-notebook .page-title { position: relative; display: inline-block; margin: clamp(20px, 4vw, 40px) 0 4px; font-family: 'Caveat', cursive; font-size: clamp(2.6rem, 6vw, 4.4rem); font-weight: 700; color: #2f4a7c; }
+.concept-notebook .page-title::after { content: ""; position: absolute; left: 2px; right: 2px; bottom: 8px; height: 12px; background: #ffe17a; z-index: -1; opacity: .8; }
+.concept-notebook .notebook-lede { max-width: 640px; font-size: 1.08rem; line-height: 1.7; color: #47536b; }
+.concept-notebook .home-card { position: relative; background: #fffef7; border: 1px solid rgb(47 74 124 / 18%); border-radius: 4px; box-shadow: 0 10px 22px rgb(47 74 124 / 12%); transform: rotate(-1.1deg); }
+.concept-notebook .home-cards .home-card:nth-child(2) { transform: rotate(1.1deg); }
+.concept-notebook .home-cards .home-card:nth-child(3) { transform: rotate(-0.6deg); }
+.concept-notebook .home-card:hover { transform: rotate(0); box-shadow: 0 14px 26px rgb(47 74 124 / 18%); }
+.concept-notebook .home-card::before {
+    content: attr(data-year);
+    position: absolute; top: -16px; left: 50%; transform: translateX(-50%) rotate(-3deg);
+    width: auto; min-width: 92px; height: 30px; padding: 0 12px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgb(255 209 92 / 85%); border: 1px solid rgb(224 96 47 / 30%);
+    box-shadow: 0 3px 6px rgb(47 74 124 / 15%);
+    font-family: 'Segoe UI', sans-serif; font-size: .74rem; font-weight: 700; letter-spacing: .02em;
+    color: #6b3f14; white-space: nowrap;
+}
+.concept-notebook .home-cards .home-card:nth-child(2)::before { transform: translateX(-50%) rotate(3deg); }
+.concept-notebook .home-cards .home-card:nth-child(3)::before { transform: translateX(-50%) rotate(-1.5deg); }
+.concept-notebook .card-glyph { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #eaf0fb; color: #2f4a7c; font-weight: 700; font-family: 'Segoe UI', sans-serif; }
+.concept-notebook .home-card h2 { font-family: 'Caveat', cursive; font-size: 1.65rem; color: #2f4a7c; }
+.concept-notebook .home-card p { color: #47536b; }
+.concept-notebook .home-card .go { display: inline-block; margin-top: 14px; color: #e0602f; font-weight: 700; }
+.concept-notebook .home-footer { border-top: 2px solid #2f4a7c; color: #47536b; }
+.concept-notebook .home-footer a { color: #e0602f; }
+
+/* ============================================================
+   Concept 3 — Aurora Terminal (home3.html)
+   Deep space background, glass panels, glowing gradients
+   ============================================================ */
+.concept-aurora {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #eef1ff;
+    background: #0b0d1c;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+.concept-aurora::before {
+    content: "";
+    position: fixed; inset: -10%;
+    background:
+        radial-gradient(38% 32% at 18% 12%, rgb(124 92 255 / 45%), transparent 70%),
+        radial-gradient(34% 30% at 82% 8%, rgb(63 214 208 / 40%), transparent 70%),
+        radial-gradient(40% 34% at 70% 88%, rgb(255 122 184 / 32%), transparent 70%);
+    filter: blur(30px);
+    z-index: 0;
+    pointer-events: none;
+}
+.concept-aurora .home-header, .concept-aurora .home-main, .concept-aurora .home-footer { position: relative; z-index: 1; }
+.concept-aurora .home-brand span { font-weight: 800; letter-spacing: -.03em; }
+.concept-aurora .home-brand small { display: block; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: #8ee9df; font-weight: 600; }
+.concept-aurora .home-nav a { color: #b7bfe8; border: 1px solid transparent; }
+.concept-aurora .home-nav a:hover, .concept-aurora .home-nav a[aria-current="page"] { color: #eef1ff; border-color: rgb(124 92 255 / 60%); background: rgb(124 92 255 / 12%); }
+.concept-aurora .terminal-tag { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .82rem; color: #8ee9df; background: rgb(124 92 255 / 10%); border: 1px solid rgb(124 92 255 / 35%); padding: 5px 12px; border-radius: 999px; margin-bottom: 18px; }
+.concept-aurora .terminal-tag::before { content: "●"; color: #ff7ab8; font-size: .6rem; }
+.concept-aurora .aurora-title { margin: 0; font-size: clamp(2.4rem, 5.6vw, 4.3rem); line-height: 1.06; letter-spacing: -.04em; max-width: 780px; }
+.concept-aurora .aurora-title .grad { background: linear-gradient(90deg, #7c5cff, #3fd6d0 55%, #ff7ab8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.concept-aurora .aurora-lede { max-width: 620px; color: #b7bfe8; font-size: 1.08rem; line-height: 1.7; margin-top: 16px; }
+.concept-aurora .home-card { background: rgb(255 255 255 / 5%); border: 1px solid rgb(255 255 255 / 12%); border-radius: 20px; backdrop-filter: blur(14px); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
+.concept-aurora .home-card:hover { transform: translateY(-4px); border-color: rgb(124 92 255 / 60%); background: rgb(255 255 255 / 8%); }
+.concept-aurora .card-glyph { display: inline-flex; width: 42px; height: 42px; align-items: center; justify-content: center; border-radius: 12px; background: rgb(124 92 255 / 18%); color: #b9aeff; font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.concept-aurora .home-cards .home-card:nth-child(2) .card-glyph { background: rgb(63 214 208 / 18%); color: #8ee9df; }
+.concept-aurora .home-card p { color: #b7bfe8; }
+.concept-aurora .home-card .go { display: inline-block; margin-top: 14px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .88rem; color: #8ee9df; }
+.concept-aurora .home-footer { border-top: 1px solid rgb(255 255 255 / 12%); color: #8b93bd; }
+.concept-aurora .home-footer a { color: #ff7ab8; }
+
+@media (max-width: 720px) {
+    .concept-notebook .home-card::before { display: none; }
+}

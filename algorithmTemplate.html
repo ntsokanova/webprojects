@@ -1,52 +1,59 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AlgorihtmsTemplate</title>
-        <link rel="stylesheet" href="css/mainLayout.css">
-        <link rel="stylesheet" href="css/algoTemp.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article_shortcut,calendar_month,picture_as_pdf"/>
-        <script src="js/util.js"> </script>
-        <link rel="stylesheet" href="css/sideMenu.css">
-        <link rel="stylesheet" href="css/exrecise.css">
+        <meta name="description" content="Algorithm write-up template.">
+        <title>Algorithm Template | Notebook Style</title>
+        <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap">
+        <link rel="stylesheet" href="css/homeConcepts.css">
+        <link rel="stylesheet" href="css/exerciseNotebook.css">
+        <link rel="stylesheet" href="css/algorithmNotebook.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
-       <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script src="js/util.js"></script>
     </head>
-    <body>
-        <header>
-            <img src="img/logo.png" style="max-height: 76px; width: auto;">
-            <nav class="top-nav">
-                <ul>
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Exercises Log </a> </li>
-                    <li class="selected-link"> <a href=""> Algorithms </a> </li>
-                </ul>
-            </nav> 
+    <body class="home-page concept-notebook exercise-notebook algorithm-notebook">
+        <header class="home-header">
+            <a class="home-brand" href="index.html" aria-label="Neli Tsokanova — home">
+                <img src="img/logo.svg" alt="Neli Tsokanova Logo" width="48" height="48">
+                <span>Neli Tsokanova<small>Exercise Class Notebook</small></span>
+            </a>
+            <nav class="home-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="exerciseHistoryAnalysis.html">Analysis I FS26</a>
+                <a href="exerciseHistoryAUD.html">AuD HS25</a>
+            </nav>
         </header>
-        <main>
-            <nav class="side-nav">
-                <ul class="glossary">
-                        <li onclick="jumpToAlgoPart('#Introduction')">
-                            <span class="material-symbols-outlined">article_shortcut</span>
-                            Introduction
+        <main class="home-main notebook-layout">
+            <nav class="notebook-side-nav" aria-label="Article sections">
+                <p class="notebook-side-title">Sections</p>
+                <ul class="notebook-glossary">
+                        <li onclick="jumpTo('#Introduction')">
+                            <span class="notebook-tag">In</span>
+                            <span class="notebook-item-text">Introduction</span>
                         </li>
-                        <li onclick="jumpToAlgoPart('#MainIdea')">
-                            <span class="material-symbols-outlined">article_shortcut</span>
-                            Main Idea
+                        <li onclick="jumpTo('#MainIdea')">
+                            <span class="notebook-tag">Id</span>
+                            <span class="notebook-item-text">Main Idea</span>
                         </li>
-                        <li onclick="jumpToAlgoPart('#Implementation')">
-                            <span class="material-symbols-outlined">article_shortcut</span>
-                            Implementation
+                        <li onclick="jumpTo('#Implementation')">
+                            <span class="notebook-tag">Im</span>
+                            <span class="notebook-item-text">Implementation</span>
                         </li>
-                        <li onclick="jumpToAlgoPart('#Runtime')">
-                            <span class="material-symbols-outlined">article_shortcut</span>
-                            Runtime
+                        <li onclick="jumpTo('#Runtime')">
+                            <span class="notebook-tag">Ru</span>
+                            <span class="notebook-item-text">Runtime</span>
                         </li>
                 </ul>
             </nav>
-            <article>
-                <section>
-                    <h2 id="Introduction"> Introduction </h2>
+            <article class="notebook-article">
+                <section id="Introduction" class="notebook-card">
+                    <div class="notebook-card-head">
+                        <h2>Introduction</h2>
+                    </div>
                     <p>
                         sjdfhf ughryuhg trgtr geuteurgy rt r eruteyrtr ruut t  turuhfjerbreuh whkjgrg huafjfw ergef 
                         eiuhtr eutyexwrewr yrewhfergewnuewrwrwe reuwruweryhdhwufeuhfuiwofnwreyr ryufewjhdweufgeiuf
@@ -56,10 +63,12 @@
                         eiuhtr eutyexwrewr yrewhfergewnuewrwrwe reuwruweryhdhwufeuhfuiwofnwreyr ryufewjhdweufgeiuf
                         fuerugtyueruwurweurdbsiausdfgorfw zqoiwenu rcry  urfgvf uequygrereyrywqe eyuewmooE;HUGFF
                         WEHFEJHRJWE UE REUEGFWEJJue uieugrbqwkwedbjqeuwef.
-                    </p>    
+                    </p>
                 </section>
-                <section>
-                    <h2 id="MainIdea"> Algorithm Description </h2>
+                <section id="MainIdea" class="notebook-card">
+                    <div class="notebook-card-head">
+                        <h2>Main Idea</h2>
+                    </div>
                     <p>
                         sjdfhf ughryuhg trgtr geuteurgy rt r eruteyrtr ruut t  turuhfjerbreuh whkjgrg huafjfw ergef 
                         eiuhtr eutyexwrewr yrewhfergewnuewrwrwe reuwruweryhdhwufeuhfuiwofnwreyr ryufewjhdweufgeiuf
@@ -103,37 +112,38 @@
                         WEHFEJHRJWE UE REUEGFWEJJue uieugrbqwkwedbjqeuwef.
                     </p>
                 </section>
-                <section>
-                    <h2 id="Implementation">Implementation</h2>
-                    <pre>
-                        <button onclick="copyCode('#code_0')">
-                            Copy
-                        </button>
-                        <code id="code_0" class="formatCode">
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">toCSV</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception
+                <section id="Implementation" class="notebook-card">
+                    <div class="notebook-card-head">
+                        <h2>Implementation</h2>
+                    </div>
+                    <div class="algo-code-wrap">
+                        <button class="algo-copy-btn" onclick="copyCode('#code_0')">Copy</button>
+                        <pre><code id="code_0" class="language-java">
+public void toCSV() throws Exception
 {
-    <span class="hljs-type">JAXBContext</span> <span class="hljs-variable">ctx</span> <span class="hljs-operator">=</span> JAXBContext.newInstance(CardsAuthorizationInfo.class);
-    <span class="hljs-type">CardsAuthorizationInfo</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> (CardsAuthorizationInfo)ctx.createUnmarshaller().unmarshal(Files.newInputStream(xmlFile));
-    <span class="hljs-type">List</span> <span class="hljs-variable">authorizations</span> <span class="hljs-operator">=</span> root.getCardAuthorizationInfo().getAuthorizations();
-                            
-    authorizations.forEach(<span class="hljs-built_in">this</span>::authorizationToString);
+    JAXBContext ctx = JAXBContext.newInstance(CardsAuthorizationInfo.class);
+    CardsAuthorizationInfo root = (CardsAuthorizationInfo)ctx.createUnmarshaller().unmarshal(Files.newInputStream(xmlFile));
+    List&lt;CardAuthorization&gt; authorizations = root.getCardAuthorizationInfo().getAuthorizations();
+
+    authorizations.forEach(this::authorizationToString);
     System.out.println(csv);
 }
-                            
-                            
-<span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">authorizationToString</span><span class="hljs-params">(CardAuthorization a)</span>
+
+
+private void authorizationToString(CardAuthorization a)
 {
-    csv.append(a.getChangeAmount()).append(<span class="hljs-string">", "</span>)
-        .append(a.getMerchantName()).append(<span class="hljs-string">", "</span>)
-        .append(a.getTransactionDate().format(dateFormat)).append(<span class="hljs-string">", "</span>)
-        .append(a.getCategory()).append(<span class="hljs-string">", "</span>)
-        .append(a.getOperationDescription()).append(<span class="hljs-string">"\n"</span>);
-}
-                        </code>
-                    </pre>
+    csv.append(a.getChangeAmount()).append(", ")
+       .append(a.getMerchantName()).append(", ")
+       .append(a.getTransactionDate().format(dateFormat)).append(", ")
+       .append(a.getCategory()).append(", ")
+       .append(a.getOperationDescription()).append("\n");
+}</code></pre>
+                    </div>
                 </section>
-                <section>
-                    <h2 id="Runtime"> Runtime Analysis </h2>
+                <section id="Runtime" class="notebook-card">
+                    <div class="notebook-card-head">
+                        <h2>Runtime Analysis</h2>
+                    </div>
                     <p>
                         sjdfhf ughryuhg trgtr geuteurgy rt r eruteyrtr ruut t  turuhfjerbreuh whkjgrg huafjfw ergef 
                         eiuhtr eutyexwrewr yrewhfergewnuewrwrwe reuwruweryhdhwufeuhfuiwofnwreyr ryufewjhdweufgeiuf
@@ -147,7 +157,10 @@
                 </section>
             </article>
         </main>
-        <footer>Footer</footer>
+        <footer class="home-footer">
+            <span>Contact information</span>
+            <a href="mailto:ntsokanova@ethz.ch">ntsokanova@ethz.ch</a>
+        </footer>
+        <script>hljs.highlightAll();</script>
     </body>
-    <script>hljs.highlightAll();</script>
 </html>

@@ -3,724 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise Log</title>
-    <link rel="stylesheet" href="css/mainLayout.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=article_shortcut,calendar_month,mail,picture_as_pdf,quiz"/>
-    <script src="js/util.js"> </script>
-    <link rel="stylesheet" href="css/sideMenu.css">
-    <link rel="stylesheet" href="css/exrecise.css">
+    <meta name="description" content="Notebook-style exercise log for Analysis I.">
+    <title>Analysis I FS26 | Notebook Style</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap">
+    <link rel="stylesheet" href="css/homeConcepts.css">
+    <link rel="stylesheet" href="css/exerciseNotebook.css">
+    <script src="js/util.js"></script>
 </head>
-<body>
-    <header>
-        <div class="logo"><img src="img/Logo.jpg" style="max-height: 54px; width: auto;"></div>
-        <nav class="top-nav">
-            <ul>
-                <li> <a href="index.html"> Home </a> </li>
-                <li class="selected-link"> <a href="exerciseHistoryAnalysis.html"> Analysis I FS26 </a> </li>
-                <li> <a href="exerciseHistory2.html"> AuD HS25 </a> </li>
-            </ul>
-        </nav> 
+<body class="home-page concept-notebook exercise-notebook">
+    <header class="home-header">
+        <a class="home-brand" href="index.html" aria-label="Neli Tsokanova — home">
+            <img src="img/logo.svg" alt="Neli Tsokanova Logo" width="48" height="48">
+            <span>Neli Tsokanova<small>Exercise Class Notebook</small></span>
+        </a>
+        <nav class="home-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="exerciseHistoryAUD2026.html">AuD HS26</a>
+            <a href="exerciseHistoryAnalysis.html" aria-current="page">Analysis I FS26</a>
+            <a href="exerciseHistoryAUD2025.html">AuD HS25</a>
+        </nav>
     </header>
-    <main>
-        <nav class="side-nav">
-            <ul class="glossary">
-                    <li onclick="jumpTo('#Exercise1')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 1 (23.02.2026 / 24.02.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise2')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 2 (02.03.2026 / 03.03.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise3')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 3 (09.03.2026 / 10.03.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise4')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 4 (16.03.2026 / 17.03.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise5')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 5 (23.03.2026 / 24.03.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise6')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 6 (30.03.2026 / 31.03.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise7')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 7 (13.04.2026 / 14.04.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise8')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 8 (21.04.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise9')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 9 (27.04.2026 / 28.04.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise10')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 10 (04.05.2026 / 05.05.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise11')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 11 (11.05.2026 / 12.05.2026)
-                    </li>
-                    <li onclick="jumpTo('#Exercise12')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 12 (19.05.2026)
-                    </li>
-                     <li onclick="jumpTo('#Exercise13')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Exercise 13 (26.05.2026)
-                    </li>
-                    <li onclick="jumpTo('#Script')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        Script for PVW (07.2026)
-                    </li>
-                    <li onclick="jumpTo('#PVWD1')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        PVW Day 1 (29.06.2026 / 06.07.2026)
-                    </li>
-                    <li onclick="jumpTo('#PVWD2')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        PVW Day 2 (30.06.2026 / 07.07.2026)
-                    </li>
-                    <li onclick="jumpTo('#PVWD3')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        PVW Day 3 (01.07.2026 / 08.07.2026)
-                    </li>
-                    <li onclick="jumpTo('#PVWD4')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        PVW Day 4 (02.07.2026 / 09.07.2026)
-                    </li>
-                    <li onclick="jumpTo('#PVWD5')">
-                        <span class="material-symbols-outlined">article_shortcut</span>
-                        PVW Day 5 (03.07.2026 / 10.07.2026)
-                    </li>
+    <main class="home-main notebook-layout">
+        <nav class="notebook-side-nav" aria-label="Exercise list">
+            <p class="notebook-side-title">Exercises</p>
+            <ul class="notebook-glossary">
+                <li onclick="jumpTo('#Exercise1')"><span class="notebook-tag">01</span><span class="notebook-item-text">Exercise 1 <small>(23.02 / 24.02.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise2')"><span class="notebook-tag">02</span><span class="notebook-item-text">Exercise 2 <small>(02.03 / 03.03.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise3')"><span class="notebook-tag">03</span><span class="notebook-item-text">Exercise 3 <small>(09.03 / 10.03.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise4')"><span class="notebook-tag">04</span><span class="notebook-item-text">Exercise 4 <small>(16.03 / 17.03.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise5')"><span class="notebook-tag">05</span><span class="notebook-item-text">Exercise 5 <small>(23.03 / 24.03.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise6')"><span class="notebook-tag">06</span><span class="notebook-item-text">Exercise 6 <small>(30.03 / 31.03.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise7')"><span class="notebook-tag">07</span><span class="notebook-item-text">Exercise 7 <small>(13.04 / 14.04.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise8')"><span class="notebook-tag">08</span><span class="notebook-item-text">Exercise 8 <small>(21.04.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise9')"><span class="notebook-tag">09</span><span class="notebook-item-text">Exercise 9 <small>(27.04 / 28.04.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise10')"><span class="notebook-tag">10</span><span class="notebook-item-text">Exercise 10 <small>(04.05 / 05.05.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise11')"><span class="notebook-tag">11</span><span class="notebook-item-text">Exercise 11 <small>(11.05 / 12.05.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise12')"><span class="notebook-tag">12</span><span class="notebook-item-text">Exercise 12 <small>(19.05.2026)</small></span></li>
+                <li onclick="jumpTo('#Exercise13')"><span class="notebook-tag">13</span><span class="notebook-item-text">Exercise 13 <small>(26.05.2026)</small></span></li>
+                <li onclick="jumpTo('#Script')"><span class="notebook-tag">Sc</span><span class="notebook-item-text">Script for PVW <small>(07.2026)</small></span></li>
+                <li onclick="jumpTo('#PVWD1')"><span class="notebook-tag">P1</span><span class="notebook-item-text">PVW Day 1 <small>(29.06 / 06.07.2026)</small></span></li>
+                <li onclick="jumpTo('#PVWD2')"><span class="notebook-tag">P2</span><span class="notebook-item-text">PVW Day 2 <small>(30.06 / 07.07.2026)</small></span></li>
+                <li onclick="jumpTo('#PVWD3')"><span class="notebook-tag">P3</span><span class="notebook-item-text">PVW Day 3 <small>(01.07 / 08.07.2026)</small></span></li>
+                <li onclick="jumpTo('#PVWD4')"><span class="notebook-tag">P4</span><span class="notebook-item-text">PVW Day 4 <small>(02.07 / 09.07.2026)</small></span></li>
+                <li onclick="jumpTo('#PVWD5')"><span class="notebook-tag">P5</span><span class="notebook-item-text">PVW Day 5 <small>(03.07 / 10.07.2026)</small></span></li>
             </ul>
         </nav>
-        <article>
-            <section id="Exercise1" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 1</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 23.02.2026 / 24.02.2026     
-                    </div>
-
-                    <p>
-                        We started off the exercise class with a short revision of the lecture content about
-                        logic and we solved some exercises related to transforming natural language into formulas
-                        and formulas to natural language. Afterwards we went over the portion of the lecture about sets
-                        and we solved some exercises about proving set equality or equivalence between statements about sets.
-                        Then we mooved on to discussing the definitions of upper/lower bouns of a set, the supremum, infimum,
-                        minimum and maximum of a set. We solved an exercise in which for a given set we needed to determine
-                        the supremum and the infumum of the set. Finally, we used the multiplication/addition/order axioms to
-                        prove some statements about real numbers.   
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/RmbWJeKm3PyppNn" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Presentation 
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/NERoHBbDZ7bNRQG" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/eBW9ZH6qpn3g8gt" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/TnF6F67TMaDFpri" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/cL2xPGLtKPsdR97" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+        <article class="notebook-article">
+            <section id="Exercise1" class="notebook-card" data-tag="Exercise 1">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 23.02.2026 / 24.02.2026</span>
+                </div>
+                <p>
+                    We started off the exercise class with a short revision of the lecture content about
+                    logic and we solved some exercises related to transforming natural language into formulas
+                    and formulas to natural language. Afterwards we went over the portion of the lecture about sets
+                    and we solved some exercises about proving set equality or equivalence between statements about sets.
+                    Then we mooved on to discussing the definitions of upper/lower bouns of a set, the supremum, infimum,
+                    minimum and maximum of a set. We solved an exercise in which for a given set we needed to determine
+                    the supremum and the infumum of the set. Finally, we used the multiplication/addition/order axioms to
+                    prove some statements about real numbers.
+                </p>
+                <div class="notebook-links">
+                    <a href="docs/analysis2025/e1_presentation.pdf" target="_blank">📊 Presentation</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/NERoHBbDZ7bNRQG" target="_blank">📄 Exercise template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/eBW9ZH6qpn3g8gt" target="_blank">📝 Exercise notes (DE)</a>
+                    <a href="docs/analysis2025/e1_notes_english.pdf" target="_blank">📝 Exercise notes (EN)</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/cL2xPGLtKPsdR97" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise2" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 2</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 02.03.2026 / 03.03.2026     
-                    </div>
-
-                    <p>
-                         We started off the class with the first bonus test. Then we talked about the definition
-                         of complex numbers and about theitr normal form and solved some exercises. We moved on to
-                         the trogonometric form of complex numbers and we practiced it with several exercises. Finaly,
-                         we tied the trigonometric form of the complex numbers to their polar form using Euler's formula
-                         and solved some exercises. 
-
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/sAG37RyNjWE3iew" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Template English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/n3Sk8XQ4gYcxK9B" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Template German
-                        </a>
-                         <a href="https://polybox.ethz.ch/index.php/s/JBzJFFooyb9i3Bf" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/jYrHz6ayL6N8oZ3" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/QpkG7RWQGF9Pobn" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise2" class="notebook-card" data-tag="Exercise 2">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 02.03.2026 / 03.03.2026</span>
+                </div>
+                <p>
+                    We started off the class with the first bonus test. Then we talked about the definition
+                    of complex numbers and about theitr normal form and solved some exercises. We moved on to
+                    the trogonometric form of complex numbers and we practiced it with several exercises. Finaly,
+                    we tied the trigonometric form of the complex numbers to their polar form using Euler's formula
+                    and solved some exercises.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/sAG37RyNjWE3iew" target="_blank">📄 Template English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/n3Sk8XQ4gYcxK9B" target="_blank">📄 Template German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/JBzJFFooyb9i3Bf" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/jYrHz6ayL6N8oZ3" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/QpkG7RWQGF9Pobn" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise3" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 3</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 09.03.2026 / 10.03.2026     
-                    </div>
-
-                    <p>
-                         We started off the class by revising the theory taught in the lecture. 
-                         Then, we moved on to showing that a sequence converges using the epsilon 
-                         definition seen in the lecture. After that, we computed the limits of different 
-                         types of sequences. First, we considered sequences in which the index n we iterate 
-                         over was in the exponent, and then where n was under a square root or a cube root. 
-                         Afterwards, we solved several exercises in which the sequence whose limit we were looking 
-                         for was defined as an expression of another sequence that converges. Finally, we solved 
-                         several exercises that used the definition of the number e as the limit of the 
-                         sequence (1+1/n)^n.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/CNdTrSamdj6YZsN" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/bG7xw6RCS9jfidJ" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/4TT7q47m4GsQFqx" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/NJ7RR52GwKCrBYA" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise3" class="notebook-card" data-tag="Exercise 3">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 09.03.2026 / 10.03.2026</span>
+                </div>
+                <p>
+                    We started off the class by revising the theory taught in the lecture.
+                    Then, we moved on to showing that a sequence converges using the epsilon
+                    definition seen in the lecture. After that, we computed the limits of different
+                    types of sequences. First, we considered sequences in which the index n we iterate
+                    over was in the exponent, and then where n was under a square root or a cube root.
+                    Afterwards, we solved several exercises in which the sequence whose limit we were looking
+                    for was defined as an expression of another sequence that converges. Finally, we solved
+                    several exercises that used the definition of the number e as the limit of the
+                    sequence (1+1/n)^n.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/CNdTrSamdj6YZsN" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/bG7xw6RCS9jfidJ" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/4TT7q47m4GsQFqx" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/NJ7RR52GwKCrBYA" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise4" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 4</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 16.03.2026 / 17.03.2026     
-                    </div>
-
-                    <p>
-                        We strated off the class by discussing the common mistakes from Serie 3. Then we went over the teory covered in
-                        the lecture. Aftrewards we practiced using the Monotone convergence theorem to show that given sequences converge addition
-                        to compute their limit. We finished off the class by showing the convergence of a sequence using the Cauchy criterium for
-                        covregence.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/iH4RNZL9sbdmQ2F" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/L4rz2Z9JcG5XQWg" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/5eXgwsk2adR3354" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/9rsADJRKeLPCRmQ" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise4" class="notebook-card" data-tag="Exercise 4">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 16.03.2026 / 17.03.2026</span>
+                </div>
+                <p>
+                    We strated off the class by discussing the common mistakes from Serie 3. Then we went over the teory covered in
+                    the lecture. Aftrewards we practiced using the Monotone convergence theorem to show that given sequences converge addition
+                    to compute their limit. We finished off the class by showing the convergence of a sequence using the Cauchy criterium for
+                    covregence.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/iH4RNZL9sbdmQ2F" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/L4rz2Z9JcG5XQWg" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/5eXgwsk2adR3354" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/9rsADJRKeLPCRmQ" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise5" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 5</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 23.03.2026 / 24.03.2026     
-                    </div>
-
-                    <p>
-                        We started off the class with the bonus quiz. Then we went over the theory about Series covered in the lecture.
-                        We mooved on to sovling exercises about computing the Value of several telescopic series. Then we practiced using the 
-                        Minoranten/Majoranten ctiterion to prove that a given series converges. Aftrewards we solved some exrcises using the
-                        Root ctiterion (Wurzelkriterium) and the Leibniz criterion to proove convergence. We finished off by computing the value
-                        of the series defined by the sequence (n*q^n) using the geometric series.  
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/ssc4kqxHfNefFWm" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/8tbcPPFr2qyMXmN" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/XaGf96SSFSodWEG" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/TpZrPYjHABKpqRZ" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise5" class="notebook-card" data-tag="Exercise 5">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 23.03.2026 / 24.03.2026</span>
+                </div>
+                <p>
+                    We started off the class with the bonus quiz. Then we went over the theory about Series covered in the lecture.
+                    We mooved on to sovling exercises about computing the Value of several telescopic series. Then we practiced using the
+                    Minoranten/Majoranten ctiterion to prove that a given series converges. Aftrewards we solved some exrcises using the
+                    Root ctiterion (Wurzelkriterium) and the Leibniz criterion to proove convergence. We finished off by computing the value
+                    of the series defined by the sequence (n*q^n) using the geometric series.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/ssc4kqxHfNefFWm" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/8tbcPPFr2qyMXmN" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/XaGf96SSFSodWEG" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/TpZrPYjHABKpqRZ" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise6" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 6</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 30.03.2026 / 31.03.2026     
-                    </div>
-
-                    <p>
-                        We started off the class with a recap of the theory about convergence radius and functions 
-                        seen in the lecture. Then we solved some exercises about convergence radius and convergence
-                        interval. Aftrewards we moved on to solving problems related to odd and even functions. We practiced
-                        proving bijectivity of functions and determining convexuty of a function by its graph. Finally, we computed the 
-                        left and the right limit of a function in a given accumulation point.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/SrSxWT9EY72fmwo" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/QnfD7y9k9wXFFJF" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/pZC2Z63gyszF4R5" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/C2CNbLwdiC3n3n4" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise6" class="notebook-card" data-tag="Exercise 6">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 30.03.2026 / 31.03.2026</span>
+                </div>
+                <p>
+                    We started off the class with a recap of the theory about convergence radius and functions
+                    seen in the lecture. Then we solved some exercises about convergence radius and convergence
+                    interval. Aftrewards we moved on to solving problems related to odd and even functions. We practiced
+                    proving bijectivity of functions and determining convexuty of a function by its graph. Finally, we computed the
+                    left and the right limit of a function in a given accumulation point.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/SrSxWT9EY72fmwo" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/QnfD7y9k9wXFFJF" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/pZC2Z63gyszF4R5" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/C2CNbLwdiC3n3n4" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise7" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 7</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 13.04.2026 / 14.04.2026     
-                    </div>
-
-                    <p>
-                        We started off the class with a recap of the tehory about limits of functionas and continuity
-                        covered in the lecture before the Easter breack. Then we computed the limit of several functions in
-                        a given pint. Afterwards we moved on to using the Zwischenwertsatz to determine if a given function had
-                        a root in a given interval.Next we practiced determining if a function is continuous in a particular point. 
-                        Finally, we showed that the Indicator function for the rational numbers is discontinuous in every point. 
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/7AtaWJFxFkEHaAk" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/DynLYp6ejfFJgRK" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/WFm342P84TxSbCs" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/WRRPkY5Jkn6Pb45" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise7" class="notebook-card" data-tag="Exercise 7">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 13.04.2026 / 14.04.2026</span>
+                </div>
+                <p>
+                    We started off the class with a recap of the tehory about limits of functionas and continuity
+                    covered in the lecture before the Easter breack. Then we computed the limit of several functions in
+                    a given pint. Afterwards we moved on to using the Zwischenwertsatz to determine if a given function had
+                    a root in a given interval.Next we practiced determining if a function is continuous in a particular point.
+                    Finally, we showed that the Indicator function for the rational numbers is discontinuous in every point.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/7AtaWJFxFkEHaAk" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/DynLYp6ejfFJgRK" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/WFm342P84TxSbCs" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/WRRPkY5Jkn6Pb45" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise8" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 8</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 21.04.2026     
-                    </div>
-
-                    <p>
-                        We started off the class by doing a recap of the theory about elementary functions and 
-                        derivatives covered in the lecture. Then we practiced using the derrivation rules by computing
-                        the first derivative of several functions. Then we moved on to computing the general form the n-th
-                         derivative of a given function. Finally, we computed the limit of several functions using L'Hopital's 
-                         rule.
-
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/JLcgRo9RiTd4oWP" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/5sPSS39qKss2es4" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/E8yKrgeRMztnXKD" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise8" class="notebook-card" data-tag="Exercise 8">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 21.04.2026</span>
+                </div>
+                <p>
+                    We started off the class by doing a recap of the theory about elementary functions and
+                    derivatives covered in the lecture. Then we practiced using the derrivation rules by computing
+                    the first derivative of several functions. Then we moved on to computing the general form the n-th
+                    derivative of a given function. Finally, we computed the limit of several functions using L'Hopital's
+                    rule.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/JLcgRo9RiTd4oWP" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/5sPSS39qKss2es4" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/E8yKrgeRMztnXKD" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise9" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 9</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 27.04.2026 / 28.04.2026     
-                    </div>
-
-                    <p>
-                        We started off the class with a recap of the theory about derivatives covered in the lecture.
-                        Then we computed the first derivatives of several functions. After that we found the general
-                        form for the n-th derivative of a given function and proved its correctness by induction. Then we
-                        computed the intervals in which a given function is monotone increasing/dercreasing and convex or concav.
-                        Finaly, we found the equation of the tangent to the graf of a given function in a given point. For exercises 
-                        4, 5 and 6, please reffer to the english notes to see the graphs of the functions.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/HDgFWaMSZc32X5k" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/W6ZPtHiKPtt7cjp" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/P3QeC7YT9KPMg4r" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/oFs2CqpkwNtojoe" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise9" class="notebook-card" data-tag="Exercise 9">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 27.04.2026 / 28.04.2026</span>
+                </div>
+                <p>
+                    We started off the class with a recap of the theory about derivatives covered in the lecture.
+                    Then we computed the first derivatives of several functions. After that we found the general
+                    form for the n-th derivative of a given function and proved its correctness by induction. Then we
+                    computed the intervals in which a given function is monotone increasing/dercreasing and convex or concav.
+                    Finaly, we found the equation of the tangent to the graf of a given function in a given point. For exercises
+                    4, 5 and 6, please reffer to the english notes to see the graphs of the functions.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/HDgFWaMSZc32X5k" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/W6ZPtHiKPtt7cjp" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/P3QeC7YT9KPMg4r" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/oFs2CqpkwNtojoe" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise10" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 10</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 04.05.2026 / 05.05.2026     
-                    </div>
-
-                    <p>
-                        We started off the class by doing a recap of the theory about derivatives and Taylor polynomilas
-                        covered in the lecture. Then we determined the critical points and whetrer they are local minima
-                        or maxima for several functions. Afterwards for a given function we determined the monotone intervals,
-                        the criticals pounts, the local extrema, the intervals of covexity and concavity and the inflexion points
-                        and we drew the graph of the function. Then we computed the second and third order polynomials for a given funktion
-                        and we approcimated it in a given point usinf those polynomials. Finally, we showed that a given sequence of 
-                        functions converges uniformly to a limit we computed. 
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/eMxWHkpFGrMie3H" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/F7mFjQ6Yw2ApH4m" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/cXsFN5ZcEeY6da2" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/5W35eHYMebnjpsJ" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
+            <section id="Exercise10" class="notebook-card" data-tag="Exercise 10">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 04.05.2026 / 05.05.2026</span>
+                </div>
+                <p>
+                    We started off the class by doing a recap of the theory about derivatives and Taylor polynomilas
+                    covered in the lecture. Then we determined the critical points and whetrer they are local minima
+                    or maxima for several functions. Afterwards for a given function we determined the monotone intervals,
+                    the criticals pounts, the local extrema, the intervals of covexity and concavity and the inflexion points
+                    and we drew the graph of the function. Then we computed the second and third order polynomials for a given funktion
+                    and we approcimated it in a given point usinf those polynomials. Finally, we showed that a given sequence of
+                    functions converges uniformly to a limit we computed.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/eMxWHkpFGrMie3H" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/F7mFjQ6Yw2ApH4m" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/cXsFN5ZcEeY6da2" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/5W35eHYMebnjpsJ" target="_blank">✅ Solutions</a>
+                </div>
             </section>
-            <section id="Exercise11" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 11</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 11.05.2026 / 12.05.2026     
-                    </div>
-
-                    <p>
-                        We started off the class with the bonus quiz for this week and then we did a recap of the
-                        theory about differentail equations covered in the lecture. Afterwards for several given equatios
-                        we determined whether they were ordinary differential equations (ODE) and in case they were, 
-                        whether they were linear/nonlinear and homogeneous/inhomogeneous. Then we moved on to sovling several
-                        linear domogeneous difefrential equations with characteristic polynomials that had different multiplicity
-                        of thir roots and both real or complex roots. We finished off the class by doing a full analysis of a 
-                        given function.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/SfT9D6baH54eRxe" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                         <a href="https://polybox.ethz.ch/index.php/s/ZXK9Lo9H3JAzNzH" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes German
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/sDL4xCwq2Wkn7B5" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/SH5SHGXeDwJ3pyB" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
-             </section>
-             <section id="Exercise12" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 12</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 19.05.2026     
-                    </div>
-
-                    <p>
-                        We started off the class with the bonus quiz for this week and then we did a recap of the theory about 
-                        indefinite and definite integrals covered in the lecture. Then we moved on to computing several 
-                        indefinite integrals and we used several different rules including adding/substracting a constant under
-                        the differential, multiplying by a constant under the differential and dividing by the same constant, rewriting
-                        an integral as a sum/difference of other integrals and integration by parts.  
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/jo4PqK63JrB9QSo" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/ZZjtHQ2ptaGQgcL" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise notes English
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/xHbScnorcoNfr2A" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
-             </section>
-             <section id="Exercise13" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">Exercise 13</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 26.05.2026     
-                    </div>
-
-                    <p>
-                        Summary will be uploaded after the exercise class.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/ZKDxdercY78LyZJ" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/KtDXJbG27saHRMB" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
-             </section>
-             <section id="Script" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1"><Script></Script></span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 07.2026     
-                    </div>
-
-                    <p>
-                        This is the script we will use for the PVW.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/EpjsKjyLCHYK9RD" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                PVW script
-                        </a>
-                    </div>
-             </section>
-             <section id="PVWD1" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">PVW Day 1</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 29.06.2026 / 06.07.2026     
-                    </div>
-
-                    <p>
-                        We started off the class with a revision of the theory about complex numebers covered in the lecture.
-                        Then we solved severel exercises related to the topic. We moved on to reviewing sequences and we solved 
-                        an exercise aimed at showing convergence using the epsilon definition.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/jYK3p2nKtztFiRX" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/cR8gXxktcfLZDCc" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 1 Notes
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/DkSdrtpN7sKSemH" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 2 Notes
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/Zk3Hn7By7TyNE9J" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
-             </section>
-             <section id="PVWD2" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">PVW Day 2</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 30.06.2026 / 07.07.2026     
-                    </div>
-
-                    <p>
-                        We started off the class by computiong the limits of different types of sequences.
-                        Then we revise the theory about the monotone convergence theorem and we proved the convergence
-                        of several sequences using it. We talked about the Cauchy deffinition of convergence and we practiced it
-                        with an exercise. Then we went over the definition of series and computed the value of several telecopic series.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/omNmeNNz8SbBMyZ" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/WMc6bc34PnoGi5P" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 1 Notes
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/zS54sf5L9qkTrig" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 2 Notes
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/Rq2NFfETsMwqG2q" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
-             </section>
-             <section id="PVWD3" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">PVW Day 3</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 01.07.2026 / 08.07.2026    
-                    </div>
-
-                    <p>
-                        We revised the convergence criteria for series covered in the lecture and we used each of them 
-                        in several exercises to determine whether a given series converges or diverges. Then we went over the
-                        theory about power setries and determined the convergence radius and convergence interval of several series.
-                        We finished off the class by talking about functions and their properties such as bijectivity, odd and even functions
-                        monoteone increasing/decreasing functions, covexity/concavity and we solved several exercises on the topic.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/QDWMxGTqQj72cxB" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/ksZj4RS4NiT2tJf" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 1 Notes
-                        </a>
-                         <a href="https://polybox.ethz.ch/index.php/s/4rKsCL8PwDWJkit" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 2 Notes
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/ioHLXAGoN3dXMLa" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
-             </section>
-             <section id="PVWD4" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">PVW Day 4</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 02.07.2026 / 09.07.2026    
-                    </div>
-
-                    <p>
-                        We defined the limit of a function and we computed several limits. Then we rewised the theory about continuity
-                        covered in the lecture and we solved several types of exercises with it. Then we rewised the teory about evementary 
-                        unctions and we talked abou the intuition behind the definition of derivatives. Lastly we computed several derivatives.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/jXgnaNPAG9D79Wt" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/xHkzDGLbCkcy8W9" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 1 Notes
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/EMkzxCfMTm9eGkJ" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 2 Notes
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/4GRf5Fms7XtRtzs" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
-             </section>
-             <section id="PVWD5" class = "border">
-                    <div class="title-line">
-                        <span class="chap-title-1">PVW Day 5</span>
-                        <div class="fill-space"></div>
-                        <span class="material-symbols-outlined">calendar_month</span> 03.07.2026 / 10.07.2026    
-                    </div>
-
-                    <p>
-                        We first discussed how to use the first and second derivative of a function to analyze it. 
-                        Then se solved several execises that inculed teterminin the monotonicity intervals of a given function,
-                        the local extrema, sattle and inflexion points, convexity and concavity. Then we moved on to dicussing integrals
-                        and we computed several integrals. The theory about differential equatios is the last chapter of the script and exarcises
-                        on the topic with solutions are uploadedas attachement to this exercise class.
-                    </p>
-                    <div class="linksBar">
-                        <a href="https://polybox.ethz.ch/index.php/s/Ce66LJafFjAZZyo" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Exercise Template
-                        </a>
-                         <a href="https://polybox.ethz.ch/index.php/s/FBsgP8cwNYZyoDq" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 1 Notes
-                        </a>
-                         <a href="https://polybox.ethz.ch/index.php/s/ts9emHkzPMkSnQn" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Week 2 Notes
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/LGoRSxykW8SFNqC" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Differential Equations
-                        </a>
-                        <a href="https://polybox.ethz.ch/index.php/s/fb7MQB4jRrb3xZg" target="_blank"> 
-                                <span class="material-symbols-outlined">picture_as_pdf</span> 
-                                Solutions
-                        </a>
-                    </div>
-             </section>
+            <section id="Exercise11" class="notebook-card" data-tag="Exercise 11">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 11.05.2026 / 12.05.2026</span>
+                </div>
+                <p>
+                    We started off the class with the bonus quiz for this week and then we did a recap of the
+                    theory about differentail equations covered in the lecture. Afterwards for several given equatios
+                    we determined whether they were ordinary differential equations (ODE) and in case they were,
+                    whether they were linear/nonlinear and homogeneous/inhomogeneous. Then we moved on to sovling several
+                    linear domogeneous difefrential equations with characteristic polynomials that had different multiplicity
+                    of thir roots and both real or complex roots. We finished off the class by doing a full analysis of a
+                    given function.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/SfT9D6baH54eRxe" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/ZXK9Lo9H3JAzNzH" target="_blank">📝 Exercise notes German</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/sDL4xCwq2Wkn7B5" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/SH5SHGXeDwJ3pyB" target="_blank">✅ Solutions</a>
+                </div>
+            </section>
+            <section id="Exercise12" class="notebook-card" data-tag="Exercise 12">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 19.05.2026</span>
+                </div>
+                <p>
+                    We started off the class with the bonus quiz for this week and then we did a recap of the theory about
+                    indefinite and definite integrals covered in the lecture. Then we moved on to computing several
+                    indefinite integrals and we used several different rules including adding/substracting a constant under
+                    the differential, multiplying by a constant under the differential and dividing by the same constant, rewriting
+                    an integral as a sum/difference of other integrals and integration by parts.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/jo4PqK63JrB9QSo" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/ZZjtHQ2ptaGQgcL" target="_blank">📝 Exercise notes English</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/xHbScnorcoNfr2A" target="_blank">✅ Solutions</a>
+                </div>
+            </section>
+            <section id="Exercise13" class="notebook-card" data-tag="Exercise 13">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 26.05.2026</span>
+                </div>
+                <p>
+                    Summary will be uploaded after the exercise class.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/ZKDxdercY78LyZJ" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/KtDXJbG27saHRMB" target="_blank">✅ Solutions</a>
+                </div>
+            </section>
+            <section id="Script" class="notebook-card" data-tag="Script">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 07.2026</span>
+                </div>
+                <p>
+                    This is the script we will use for the PVW.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/EpjsKjyLCHYK9RD" target="_blank">📚 PVW script</a>
+                </div>
+            </section>
+            <section id="PVWD1" class="notebook-card" data-tag="PVW Day 1">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 29.06.2026 / 06.07.2026</span>
+                </div>
+                <p>
+                    We started off the class with a revision of the theory about complex numebers covered in the lecture.
+                    Then we solved severel exercises related to the topic. We moved on to reviewing sequences and we solved
+                    an exercise aimed at showing convergence using the epsilon definition.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/jYK3p2nKtztFiRX" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/cR8gXxktcfLZDCc" target="_blank">📝 Week 1 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/DkSdrtpN7sKSemH" target="_blank">📝 Week 2 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/Zk3Hn7By7TyNE9J" target="_blank">✅ Solutions</a>
+                </div>
+            </section>
+            <section id="PVWD2" class="notebook-card" data-tag="PVW Day 2">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 30.06.2026 / 07.07.2026</span>
+                </div>
+                <p>
+                    We started off the class by computiong the limits of different types of sequences.
+                    Then we revise the theory about the monotone convergence theorem and we proved the convergence
+                    of several sequences using it. We talked about the Cauchy deffinition of convergence and we practiced it
+                    with an exercise. Then we went over the definition of series and computed the value of several telecopic series.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/omNmeNNz8SbBMyZ" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/WMc6bc34PnoGi5P" target="_blank">📝 Week 1 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/zS54sf5L9qkTrig" target="_blank">📝 Week 2 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/Rq2NFfETsMwqG2q" target="_blank">✅ Solutions</a>
+                </div>
+            </section>
+            <section id="PVWD3" class="notebook-card" data-tag="PVW Day 3">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 01.07.2026 / 08.07.2026</span>
+                </div>
+                <p>
+                    We revised the convergence criteria for series covered in the lecture and we used each of them
+                    in several exercises to determine whether a given series converges or diverges. Then we went over the
+                    theory about power setries and determined the convergence radius and convergence interval of several series.
+                    We finished off the class by talking about functions and their properties such as bijectivity, odd and even functions
+                    monoteone increasing/decreasing functions, covexity/concavity and we solved several exercises on the topic.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/QDWMxGTqQj72cxB" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/ksZj4RS4NiT2tJf" target="_blank">📝 Week 1 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/4rKsCL8PwDWJkit" target="_blank">📝 Week 2 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/ioHLXAGoN3dXMLa" target="_blank">✅ Solutions</a>
+                </div>
+            </section>
+            <section id="PVWD4" class="notebook-card" data-tag="PVW Day 4">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 02.07.2026 / 09.07.2026</span>
+                </div>
+                <p>
+                    We defined the limit of a function and we computed several limits. Then we rewised the theory about continuity
+                    covered in the lecture and we solved several types of exercises with it. Then we rewised the teory about evementary
+                    unctions and we talked abou the intuition behind the definition of derivatives. Lastly we computed several derivatives.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/jXgnaNPAG9D79Wt" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/xHkzDGLbCkcy8W9" target="_blank">📝 Week 1 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/EMkzxCfMTm9eGkJ" target="_blank">📝 Week 2 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/4GRf5Fms7XtRtzs" target="_blank">✅ Solutions</a>
+                </div>
+            </section>
+            <section id="PVWD5" class="notebook-card" data-tag="PVW Day 5">
+                <div class="notebook-card-head">
+                    <span class="notebook-date">📅 03.07.2026 / 10.07.2026</span>
+                </div>
+                <p>
+                    We first discussed how to use the first and second derivative of a function to analyze it.
+                    Then se solved several execises that inculed teterminin the monotonicity intervals of a given function,
+                    the local extrema, sattle and inflexion points, convexity and concavity. Then we moved on to dicussing integrals
+                    and we computed several integrals. The theory about differential equatios is the last chapter of the script and exarcises
+                    on the topic with solutions are uploadedas attachement to this exercise class.
+                </p>
+                <div class="notebook-links">
+                    <a href="https://polybox.ethz.ch/index.php/s/Ce66LJafFjAZZyo" target="_blank">📄 Exercise Template</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/FBsgP8cwNYZyoDq" target="_blank">📝 Week 1 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/ts9emHkzPMkSnQn" target="_blank">📝 Week 2 Notes</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/LGoRSxykW8SFNqC" target="_blank">📐 Differential Equations</a>
+                    <a href="https://polybox.ethz.ch/index.php/s/fb7MQB4jRrb3xZg" target="_blank">✅ Solutions</a>
+                </div>
+            </section>
         </article>
     </main>
-    <footer>
-        <div class = "contactInfo">
-            <span class="contact-title">Contact infromation</span><br>
-            <a href="mailto:ntsokanova@ethz.ch"><span class="material-symbols-outlined">mail</span> ntsokanova@ethz.ch</a>
-        </div>
+    <footer class="home-footer">
+        <span>Contact information</span>
+        <a href="mailto:ntsokanova@ethz.ch">ntsokanova@ethz.ch</a>
     </footer>
 </body>
 </html>

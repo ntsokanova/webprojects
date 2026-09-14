@@ -1,0 +1,55 @@
+/* ============================================================
+   Notebook-style variant of the algorithm write-ups
+   Reuses the ".concept-notebook" / ".notebook-*" building blocks
+   from homeConcepts.css and exerciseNotebook.css, and adds the
+   bits that are specific to an algorithm article: a shorter,
+   icon-free side glossary and a styled, copyable code block.
+   ============================================================ */
+
+/* ---------- Side glossary tags (no numbers needed here) ---------- */
+.algorithm-notebook .notebook-glossary li { gap: 8px; }
+
+/* ---------- Article sections ---------- */
+.algorithm-notebook .notebook-card h2 { margin-bottom: 12px; }
+.algorithm-notebook .notebook-card p { white-space: normal; }
+
+/* ---------- Code block ---------- */
+.algo-code-wrap {
+    position: relative;
+    margin-top: 6px;
+}
+.algo-code-wrap pre {
+    margin: 0;
+    background: #f4f6fb;
+    border: 1px solid rgb(47 74 124 / 15%);
+    border-radius: 12px;
+    padding: 44px 20px 20px;
+    overflow-x: auto;
+}
+.algo-code-wrap pre code.hljs {
+    background: transparent;
+    padding: 0;
+    font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+    font-size: .85rem;
+    line-height: 1.65;
+}
+.algo-copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: .78rem;
+    font-weight: 700;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2f4a7c;
+    background: #eaf0fb;
+    padding: 6px 14px;
+    border-radius: 999px;
+    transition: background .15s ease, color .15s ease;
+}
+.algo-copy-btn:hover { background: #2f4a7c; color: #fbf6ea; }
+
+@media (max-width: 900px) {
+    .algo-code-wrap pre { padding-top: 46px; }
+}

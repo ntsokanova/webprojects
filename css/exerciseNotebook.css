@@ -1,0 +1,313 @@
+/* ============================================================
+   Notebook-style variant of the exercise log
+   Reuses the ".concept-notebook" look from homeConcepts.css
+   (header / nav / footer) and adds layout for a side list +
+   card-style article, matching the home2.html "notebook" theme.
+   ============================================================ */
+
+.concept-notebook.exercise-notebook { min-height: 100vh; display: flex; flex-direction: column; }
+
+.concept-notebook .home-header { flex-wrap: wrap; }
+
+:root { --header-h: 90px; }
+
+/* ---------- Layout: side list + article ---------- */
+.notebook-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(20px, 4vw, 40px);
+}
+
+.notebook-side-nav {
+    flex: 0 0 auto;
+    width: max-content;
+    min-width: 220px;
+    max-width: min(520px, 90vw);
+    position: sticky;
+    top: var(--header-h, 90px);
+    max-height: calc(100vh - var(--header-h, 90px) - clamp(16px, 3vw, 30px) - 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: clamp(16px, 3vw, 30px);
+    padding-right: 8px;
+}
+.notebook-side-title {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2f4a7c;
+    margin: 0 0 10px 4px;
+}
+.notebook-glossary { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+.notebook-glossary li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-size: .9rem;
+    color: #3a4661;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.notebook-glossary li:hover { background: #eaf0fb; border-color: rgb(47 74 124 / 18%); color: #2f4a7c; }
+.notebook-tag {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: #eaf0fb;
+    color: #2f4a7c;
+    font-weight: 700;
+    font-size: .7rem;
+}
+.notebook-glossary li:hover .notebook-tag { background: #2f4a7c; color: #fbf6ea; }
+.notebook-item-text { display: inline-flex; align-items: baseline; gap: 5px; line-height: 1.25; white-space: nowrap; }
+.notebook-item-text small { color: #8391ab; font-size: .78rem; white-space: nowrap; }
+
+/* ---------- Article / cards ---------- */
+.notebook-article {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: clamp(20px, 3vw, 32px);
+    padding-bottom: 40px;
+}
+.notebook-card {
+    position: relative;
+    scroll-margin-top: var(--header-h, 90px);
+    background: #fffef7;
+    border: 1px solid rgb(47 74 124 / 18%);
+    border-radius: 4px 16px 16px 16px;
+    box-shadow: 0 10px 22px rgb(47 74 124 / 10%);
+    padding: 26px 26px 22px;
+    transition: box-shadow .25s ease, border-color .25s ease, transform .25s ease;
+}
+/* Sticky note showing the exercise name — sized to fit the text and
+   safe across screen sizes (auto width/height, clamp()'d font, ellipsis
+   fallback instead of overflow if the name is ever very long). */
+.notebook-card::before {
+    content: attr(data-tag);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -10px;
+    left: 40px;
+    width: auto;
+    height: auto;
+    max-width: calc(100% - 62px);
+    box-sizing: border-box;
+    padding: 8px 20px;
+    background: rgb(255 209 92 / 75%);
+    border: 1px solid rgb(224 96 47 / 25%);
+    border-radius: 6px;
+    transform: rotate(-2deg);
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(1rem, 2.6vw, 1.3rem);
+    line-height: 1.1;
+    color: #7a4a12;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media (max-width: 480px) {
+    .notebook-card::before {
+        left: 26px;
+        max-width: calc(100% - 40px);
+        padding: 6px 14px;
+        font-size: clamp(.9rem, 4.5vw, 1.1rem);
+    }
+}
+.notebook-card.focused {
+    border-color: #e0602f;
+    box-shadow: 0 16px 32px rgb(224 96 47 / 25%);
+    transform: translateY(-2px);
+}
+.notebook-card.focused::before {
+    background: rgb(255 209 92 / 96%);
+}
+.notebook-card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-bottom: 10px;
+}
+.notebook-date { font-size: .85rem; color: #8391ab; white-space: nowrap; }
+.notebook-card p { margin: 0 0 16px; line-height: 1.65; color: #3a4661; }
+.notebook-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.notebook-links a {
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 700;
+    color: #2f4a7c;
+    background: #eaf0fb;
+    padding: 6px 13px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background .15s ease, color .15s ease;
+}
+.notebook-links a:hover { background: #2f4a7c; color: #fbf6ea; }
+
+@media (max-width: 900px) {
+    .notebook-layout { flex-direction: column; }
+    .notebook-side-nav { position: static; width: 100%; min-width: 0; max-width: none; max-height: none; }
+    .notebook-glossary { flex-direction: row; flex-wrap: wrap; }
+}
+
+/* ============================================================
+   PDF viewer overlay — a hidden "page" that takes over the
+   main area (between header and footer) when a PDF link is
+   clicked. Styled as a notebook sheet with colored index tabs
+   down the left edge for switching between the exercise's
+   other documents, and the PDF itself in an <iframe> below
+   the title area. Closing it restores the side-nav + article.
+   ============================================================ */
+.home-main.pdf-viewer-active > .notebook-side-nav,
+.home-main.pdf-viewer-active > .notebook-article {
+    display: none;
+}
+.pdf-viewer {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: clamp(16px, 3vw, 30px);
+    padding-bottom: 40px;
+}
+.pdf-viewer.open { display: flex; }
+.pdf-viewer-page {
+    position: relative;
+    display: flex;
+    flex: 0 1 auto;
+    min-height: 82vh;
+    max-width: 980px;
+    margin-left: 210px;
+    background: #fffef7;
+    border: 3px solid rgb(47 74 124 / 18%);
+    border-radius: 4px 16px 16px 16px;
+    box-shadow: 0 10px 22px rgb(47 74 124 / 10%);
+    transition: border-color .2s ease;
+}
+.pdf-viewer-tabs {
+    position: absolute;
+    left: -190px;
+    top: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 190px;
+    max-height: calc(100% - 68px);
+    overflow-y: auto;
+}
+.pdf-tab-btn {
+    width: 100%;
+    padding: 14px 10px;
+    background: #fffef7;
+    border: 2px solid rgb(47 74 124 / 25%);
+    border-radius: 10px 0 0 10px;
+    text-align: left;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.25;
+    color: #2f4a7c;
+    cursor: pointer;
+    white-space: normal;
+    word-break: normal;
+    box-shadow: -3px 3px 6px rgb(47 74 124 / 12%);
+    transition: transform .15s ease, box-shadow .15s ease, border-width .15s ease;
+}
+.pdf-tab-btn:hover { box-shadow: -4px 4px 10px rgb(47 74 124 / 18%); }
+.pdf-tab-btn.active {
+    border-width: 3px;
+    border-right: none;
+    padding-right: 12px;
+    box-shadow: -2px 2px 8px rgb(47 74 124 / 18%);
+}
+.pdf-viewer-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 30px;
+}
+.pdf-viewer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-bottom: 14px;
+}
+.pdf-viewer-breadcrumb {
+    margin: 0;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2f4a7c;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+.pdf-viewer-close {
+    flex: none;
+    background: #eaf0fb;
+    color: #2f4a7c;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+}
+.pdf-viewer-close:hover { background: #2f4a7c; color: #fbf6ea; }
+.pdf-viewer-frame-wrap {
+    flex: 1 1 auto;
+    min-height: 60vh;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgb(47 74 124 / 14%);
+}
+.pdf-viewer-frame { width: 100%; height: 100%; border: none; display: block; background: #fff; }
+
+@media (max-width: 1100px) {
+    .pdf-viewer-page { max-width: none; margin-left: 210px; margin-right: 20px; }
+}
+@media (max-width: 900px) {
+    .pdf-viewer-page { margin-left: 170px; }
+    .pdf-viewer-tabs { left: -150px; width: 150px; }
+    .pdf-tab-btn { font-size: 1rem; padding: 12px 14px; }
+}
+@media (max-width: 720px) {
+    .pdf-viewer-page { flex-direction: column; margin-left: 0; margin-right: 0; }
+    .pdf-viewer-tabs {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: auto;
+        max-height: none;
+        overflow-y: visible;
+        padding: 14px 14px 0;
+    }
+    .pdf-tab-btn {
+        width: auto;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 3px 6px rgb(47 74 124 / 12%);
+    }
+    .pdf-tab-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 10px rgb(47 74 124 / 16%); }
+    .pdf-viewer-content { padding: 18px; }
+    .pdf-viewer-frame-wrap { min-height: 50vh; }
+}
+
